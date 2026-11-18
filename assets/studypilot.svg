@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="spBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0e17"/>
+      <stop offset="100%" stop-color="#141829"/>
+    </linearGradient>
+    <linearGradient id="spAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="spCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="spBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="spGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#spBg)" rx="16"/>
+
+  <!-- Glow orbs -->
+  <circle cx="680" cy="90" r="140" fill="#8b5cf6" opacity="0.18" filter="url(#spGlow)"/>
+  <circle cx="120" cy="420" r="160" fill="#3b82f6" opacity="0.15" filter="url(#spGlow)"/>
+
+  <!-- Subtle grid lines -->
+  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+  </g>
+
+  <!-- Browser/App Header -->
+  <rect x="35" y="30" width="730" height="42" rx="10" fill="#171b2e" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="58" cy="51" r="5" fill="#ef4444" opacity="0.8"/>
+  <circle cx="74" cy="51" r="5" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="90" cy="51" r="5" fill="#10b981" opacity="0.8"/>
+  <rect x="230" y="40" width="340" height="22" rx="6" fill="#0d101d" stroke="rgba(255,255,255,0.06)"/>
+  <text x="360" y="55" fill="#717a94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" text-anchor="middle">studypilot-frontend-u2iw.onrender.com</text>
+
+  <!-- App Dashboard Container -->
+  <g transform="translate(35, 85)">
+    <!-- Sidebar -->
+    <rect x="0" y="0" width="160" height="375" rx="10" fill="#111424" stroke="rgba(255,255,255,0.06)"/>
+    
+    <!-- Logo item -->
+    <circle cx="28" cy="30" r="12" fill="url(#spAccent)"/>
+    <path d="M24 30 L27 33 L33 26" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="48" y="34" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">StudyPilot</text>
+
+    <!-- Sidebar menu items -->
+    <rect x="14" y="65" width="132" height="30" rx="6" fill="rgba(139, 92, 246, 0.15)" stroke="rgba(139, 92, 246, 0.3)"/>
+    <text x="38" y="84" fill="#a78bfa" font-family="sans-serif" font-weight="600" font-size="12">Dashboard</text>
+    <circle cx="25" cy="80" r="4" fill="#8b5cf6"/>
+
+    <text x="38" y="124" fill="#64748b" font-family="sans-serif" font-size="12">Study Plans</text>
+    <circle cx="25" cy="120" r="4" fill="#475569"/>
+
+    <text x="38" y="164" fill="#64748b" font-family="sans-serif" font-size="12">Analytics</text>
+    <circle cx="25" cy="160" r="4" fill="#475569"/>
+
+    <text x="38" y="204" fill="#64748b" font-family="sans-serif" font-size="12">Tasks &amp; Notes</text>
+    <circle cx="25" cy="200" r="4" fill="#475569"/>
+
+    <text x="38" y="244" fill="#64748b" font-family="sans-serif" font-size="12">Settings</text>
+    <circle cx="25" cy="240" r="4" fill="#475569"/>
+
+    <!-- Bottom user pill -->
+    <rect x="12" y="325" width="136" height="38" rx="8" fill="#171b2e" stroke="rgba(255,255,255,0.06)"/>
+    <circle cx="28" cy="344" r="10" fill="#3b82f6"/>
+    <text x="46" y="344" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="11">Pravin Kumar</text>
+    <text x="46" y="356" fill="#64748b" font-family="sans-serif" font-size="9">Active Session</text>
+
+    <!-- Main Content Area -->
+    <g transform="translate(175, 0)">
+      <!-- Top banner / Greeting -->
+      <rect x="0" y="0" width="555" height="70" rx="10" fill="#131728" stroke="rgba(255,255,255,0.06)"/>
+      <text x="20" y="30" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16">Smart Study Workspace</text>
+      <text x="20" y="50" fill="#94a3b8" font-family="sans-serif" font-size="12">Track study streaks, organize exam goals, and focus better.</text>
+      <rect x="420" y="18" width="118" height="34" rx="8" fill="url(#spAccent)"/>
+      <text x="479" y="39" fill="#ffffff" font-family="sans-serif" font-weight="600" font-size="11" text-anchor="middle">+ New Session</text>
+
+      <!-- Stat Cards -->
+      <g transform="translate(0, 82)">
+        <!-- Card 1 -->
+        <rect x="0" y="0" width="175" height="90" rx="10" fill="#111424" stroke="rgba(255,255,255,0.06)"/>
+        <text x="16" y="26" fill="#94a3b8" font-family="sans-serif" font-size="11">Daily Focus Target</text>
+        <text x="16" y="56" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="22">4.5 hrs</text>
+        <rect x="16" y="68" width="143" height="6" rx="3" fill="#1e243a"/>
+        <rect x="16" y="68" width="115" height="6" rx="3" fill="url(#spBar)"/>
+
+        <!-- Card 2 -->
+        <rect x="190" y="0" width="175" height="90" rx="10" fill="#111424" stroke="rgba(255,255,255,0.06)"/>
+        <text x="206" y="26" fill="#94a3b8" font-family="sans-serif" font-size="11">Current Streak</text>
+        <text x="206" y="56" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="22">12 Days 🔥</text>
+        <rect x="206" y="68" width="143" height="6" rx="3" fill="#1e243a"/>
+        <rect x="206" y="68" width="130" height="6" rx="3" fill="url(#spCyan)"/>
+
+        <!-- Card 3 -->
+        <rect x="380" y="0" width="175" height="90" rx="10" fill="#111424" stroke="rgba(255,255,255,0.06)"/>
+        <text x="396" y="26" fill="#94a3b8" font-family="sans-serif" font-size="11">Tasks Completed</text>
+        <text x="396" y="56" fill="#a78bfa" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="22">18 / 20</text>
+        <rect x="396" y="68" width="143" height="6" rx="3" fill="#1e243a"/>
+        <rect x="396" y="68" width="128" height="6" rx="3" fill="url(#spAccent)"/>
+      </g>
+
+      <!-- Bottom Split Chart & Tasks -->
+      <g transform="translate(0, 184)">
+        <!-- Chart Area -->
+        <rect x="0" y="0" width="340" height="188" rx="10" fill="#111424" stroke="rgba(255,255,255,0.06)"/>
+        <text x="18" y="28" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="13">Weekly Study Progress</text>
+        
+        <!-- Bars -->
+        <g transform="translate(25, 45)">
+          <!-- Mon -->
+          <rect x="10" y="60" width="22" height="60" rx="4" fill="#1e243a"/>
+          <rect x="10" y="75" width="22" height="45" rx="4" fill="url(#spAccent)"/>
+          <text x="21" y="132" fill="#64748b" font-family="sans-serif" font-size="10" text-anchor="middle">M</text>
+
+          <!-- Tue -->
+          <rect x="52" y="30" width="22" height="90" rx="4" fill="#1e243a"/>
+          <rect x="52" y="45" width="22" height="75" rx="4" fill="url(#spAccent)"/>
+          <text x="63" y="132" fill="#64748b" font-family="sans-serif" font-size="10" text-anchor="middle">T</text>
+
+          <!-- Wed -->
+          <rect x="94" y="20" width="22" height="100" rx="4" fill="#1e243a"/>
+          <rect x="94" y="28" width="22" height="92" rx="4" fill="url(#spAccent)"/>
+          <text x="105" y="132" fill="#64748b" font-family="sans-serif" font-size="10" text-anchor="middle">W</text>
+
+          <!-- Thu -->
+          <rect x="136" y="40" width="22" height="80" rx="4" fill="#1e243a"/>
+          <rect x="136" y="55" width="22" height="65" rx="4" fill="url(#spAccent)"/>
+          <text x="147" y="132" fill="#64748b" font-family="sans-serif" font-size="10" text-anchor="middle">T</text>
+
+          <!-- Fri -->
+          <rect x="178" y="15" width="22" height="105" rx="4" fill="#1e243a"/>
+          <rect x="178" y="20" width="22" height="100" rx="4" fill="url(#spCyan)"/>
+          <text x="189" y="132" fill="#64748b" font-family="sans-serif" font-size="10" text-anchor="middle">F</text>
+
+          <!-- Sat -->
+          <rect x="220" y="50" width="22" height="70" rx="4" fill="#1e243a"/>
+          <rect x="220" y="65" width="22" height="55" rx="4" fill="url(#spAccent)"/>
+          <text x="231" y="132" fill="#64748b" font-family="sans-serif" font-size="10" text-anchor="middle">S</text>
+
+          <!-- Sun -->
+          <rect x="262" y="40" width="22" height="80" rx="4" fill="#1e243a"/>
+          <rect x="262" y="48" width="22" height="72" rx="4" fill="url(#spAccent)"/>
+          <text x="273" y="132" fill="#64748b" font-family="sans-serif" font-size="10" text-anchor="middle">S</text>
+        </g>
+
+        <!-- Right Side: Recent Topics -->
+        <rect x="355" y="0" width="200" height="188" rx="10" fill="#111424" stroke="rgba(255,255,255,0.06)"/>
+        <text x="370" y="28" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="13">Active Topics</text>
+
+        <rect x="368" y="44" width="174" height="38" rx="6" fill="#171b2e"/>
+        <circle cx="383" cy="63" r="5" fill="#10b981"/>
+        <text x="396" y="58" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="10">Data Structures</text>
+        <text x="396" y="70" fill="#64748b" font-family="sans-serif" font-size="9">Trees &amp; Graphs</text>
+
+        <rect x="368" y="90" width="174" height="38" rx="6" fill="#171b2e"/>
+        <circle cx="383" cy="109" r="5" fill="#8b5cf6"/>
+        <text x="396" y="104" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="10">Frontend Dev</text>
+        <text x="396" y="116" fill="#64748b" font-family="sans-serif" font-size="9">React &amp; Tailwind</text>
+
+        <rect x="368" y="136" width="174" height="38" rx="6" fill="#171b2e"/>
+        <circle cx="383" cy="155" r="5" fill="#3b82f6"/>
+        <text x="396" y="150" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="10">Python Scripting</text>
+        <text x="396" y="162" fill="#64748b" font-family="sans-serif" font-size="9">Async Algorithms</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pravin Kumar | Futuristic Frontend Developer &amp; UI Engineer</title>
+  <meta name="description" content="Portfolio of Pravin Kumar — Creative Frontend Developer &amp; UI/UX Designer based in Udaipur, India. Specializing in high-performance web applications, modern landing pages, and responsive UI engineering.">
+  <meta name="keywords" content="Pravin Kumar, Frontend Developer, Web Designer, React Developer, Tailwind CSS, Portfolio, Udaipur Rajasthan, Freelance Web Developer">
+  <meta name="author" content="Pravin Kumar">
+  <meta name="theme-color" content="#05060f">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pravin Kumar | Futuristic Frontend Developer &amp; UI Engineer">
+  <meta property="og:description" content="Crafting next-generation responsive web interfaces, modern landing pages, and scalable frontend architectures.">
+  <meta property="og:image" content="assets/studypilot.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Premium Typography (Plus Jakarta Sans & Space Grotesk) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Interactive Background Canvas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Glowing Radial Light Orbs (3web.ai style atmosphere) -->
+  <div class="ambient-glow orb-purple" aria-hidden="true"></div>
+  <div class="ambient-glow orb-blue" aria-hidden="true"></div>
+  <div class="ambient-glow orb-violet" aria-hidden="true"></div>
+  <div class="ambient-grid-overlay" aria-hidden="true"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header id="site-header" class="site-header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand" aria-label="Pravin Kumar Home">
+        <span class="brand-monogram">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4H14C17.3137 4 20 6.68629 20 10C20 13.3137 17.3137 16 14 16H8V20H4V4Z" fill="url(#brandGrad)"/>
+            <defs>
+              <linearGradient id="brandGrad" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#a855f7"/>
+                <stop offset="1" stop-color="#3b82f6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-name">PRAVIN<span class="brand-dot">.</span>DEV</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- CTA Action Button -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-pill btn-glow-border">
+          <span class="pulse-indicator"></span>
+          <span>Hire Me</span>
+          <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-content">
+        <ul class="mobile-nav-links">
+          <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link">About Me</a></li>
+          <li><a href="#skills" class="mobile-nav-link">Technical Skills</a></li>
+          <li><a href="#projects" class="mobile-nav-link">Featured Projects</a></li>
+          <li><a href="#services" class="mobile-nav-link">Services</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact Me</a></li>
+        </ul>
+        <div class="mobile-contact-pill">
+          <p class="mobile-caption">Ready to collaborate?</p>
+          <a href="mailto:pravinmalviya295@gmail.com" class="mobile-email-link">pravinmalviya295@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        
+        <!-- Live Status Pill -->
+        <div class="hero-badge reveal-fade" data-delay="100">
+          <span class="status-ping">
+            <span class="ping-wave"></span>
+            <span class="ping-core"></span>
+          </span>
+          <span class="badge-text">Available for Freelance Projects Worldwide</span>
+          <span class="badge-location">📍 Udaipur, India</span>
+        </div>
+
+        <!-- Pravin Kumar Personal Photograph (Hero 3D Portrait Frame) -->
+        <div class="hero-portrait-wrap reveal-fade" data-delay="150">
+          <div class="hero-portrait-frame">
+            <div class="portrait-glow-ring"></div>
+            <div class="portrait-inner">
+              <img src="assets/pravin.jpeg" alt="Pravin Kumar - Frontend Developer" class="hero-photo" onerror="this.src='pravin.jpeg'" loading="eager" width="160" height="160">
+            </div>
+            <div class="portrait-status-badge">
+              <span class="status-live-dot"></span>
+              <span>Pravin Kumar &bull; Available for Hire</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- High-Impact Futuristic Headline -->
+        <h1 class="hero-title reveal-fade" data-delay="200">
+          Crafting <span class="gradient-text text-glow">Futuristic</span> Web Interfaces &amp; Digital Realities.
+        </h1>
+
+        <!-- Subtitle & Role -->
+        <p class="hero-subtitle reveal-fade" data-delay="300">
+          I am <strong class="text-white">Pravin Kumar</strong> — a passionate Frontend Developer and CSE scholar dedicated to engineering high-performance, responsive, and visually magnetic web experiences with modern architecture.
+        </p>
+
+        <!-- Hero Actions -->
+        <div class="hero-buttons reveal-fade" data-delay="400">
+          <a href="#projects" class="btn btn-primary btn-shine">
+            <span>Explore Projects</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>Start a Project</span>
+            <span class="btn-sparkle">✦</span>
+          </a>
+          <button class="btn btn-glass copy-email-btn" data-email="pravinmalviya295@gmail.com" title="Copy email address" aria-label="Copy Pravin's email address">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span class="btn-copy-label">Copy Email</span>
+          </button>
+        </div>
+
+        <!-- Futuristic Showcase Card (Centerpiece Visual Preview) -->
+        <div class="hero-preview-wrapper reveal-fade" data-delay="500">
+          <div class="spotlight-card hero-glass-card">
+            <div class="card-glass-glow"></div>
+            
+            <div class="terminal-bar">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="terminal-title">
+                <span class="terminal-tech-pill">pravin-portfolio.config.js</span>
+              </div>
+              <div class="terminal-status">
+                <span class="status-live">PROD READY</span>
+              </div>
+            </div>
+
+            <div class="hero-card-grid">
+              <!-- Left: Live Code Highlight -->
+              <div class="code-column">
+                <pre class="code-block"><code><span class="code-comment">// Pravin Kumar — Developer Manifest</span>
+<span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">"Pravin Kumar"</span>,
+  <span class="code-prop">role</span>: <span class="code-string">"Frontend Developer &amp; UI Architect"</span>,
+  <span class="code-prop">location</span>: <span class="code-string">"Udaipur, Rajasthan, India"</span>,
+  <span class="code-prop">stack</span>: [<span class="code-string">"React"</span>, <span class="code-string">"JavaScript"</span>, <span class="code-string">"Tailwind"</span>, <span class="code-string">"Python"</span>],
+  <span class="code-prop">focus</span>: <span class="code-string">"Ultra-responsive SaaS &amp; Modern Web Apps"</span>,
+  <span class="code-prop">status</span>: <span class="code-string">"Open to Freelance &amp; Engineering Roles"</span>
+};</code></pre>
+              </div>
+
+              <!-- Right: Interactive Metrics / Key Pillars -->
+              <div class="highlights-column">
+                <div class="hero-chip">
+                  <div class="chip-icon">⚡</div>
+                  <div class="chip-content">
+                    <span class="chip-title">Modern Dark UI/UX</span>
+                    <span class="chip-desc">Clean SaaS styling &amp; glass aesthetics</span>
+                  </div>
+                </div>
+
+                <div class="hero-chip">
+                  <div class="chip-icon">📱</div>
+                  <div class="chip-content">
+                    <span class="chip-title">100% Fluid Responsive</span>
+                    <span class="chip-desc">Seamless across mobile, tablet, 4K</span>
+                  </div>
+                </div>
+
+                <div class="hero-chip">
+                  <div class="chip-icon">🛡️</div>
+                  <div class="chip-content">
+                    <span class="chip-title">Clean, Accessible Code</span>
+                    <span class="chip-desc">Semantic HTML5 &amp; optimized modular JS</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Tech Badges on visual frame -->
+            <div class="floating-badge badge-react">⚛ React 18+</div>
+            <div class="floating-badge badge-tailwind">🎨 Tailwind CSS</div>
+            <div class="floating-badge badge-js">⚡ Modern JS</div>
+          </div>
+        </div>
+
+        <!-- Hero Quick Links / Trust Anchor -->
+        <div class="hero-social-strip reveal-fade" data-delay="600">
+          <span class="strip-label">DIRECT CHANNELS &amp; REPOSITORIES</span>
+          <div class="strip-links">
+            <a href="https://github.com/PRAVIN-KUMAR-295" target="_blank" rel="noopener noreferrer" class="strip-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              <span>GitHub / PRAVIN-KUMAR-295</span>
+            </a>
+            <a href="https://www.linkedin.com/in/pravin-kumar-b45b28383/" target="_blank" rel="noopener noreferrer" class="strip-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <span>LinkedIn Profile</span>
+            </a>
+            <a href="mailto:pravinmalviya295@gmail.com" class="strip-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>pravinmalviya295@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT ME SECTION ==================== -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">ENGINEERING PHILOSOPHY</span>
+          <h2 class="section-title">About <span class="gradient-text">Pravin Kumar</span></h2>
+          <p class="section-description">
+            CSE student and frontend craftsman focused on creating high-conversion, highly usable digital products.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- Left Column: Stylized Developer Hologram / Profile Card -->
+          <div class="about-visual reveal-fade" data-delay="150">
+            <div class="spotlight-card profile-card">
+              <div class="profile-glow"></div>
+              
+              <div class="profile-avatar-frame">
+                <img src="assets/pravin.jpeg" alt="Pravin Kumar - Frontend Developer" class="profile-avatar-img" width="220" height="220" loading="lazy" onerror="this.src='pravin.jpeg'">
+              </div>
+
+              <div class="profile-meta">
+                <h3 class="profile-name">Pravin Kumar</h3>
+                <p class="profile-title">Frontend Developer &amp; CSE Student</p>
+                
+                <div class="profile-badges">
+                  <span class="meta-pill"><span class="pin-dot"></span> Udaipur, Rajasthan</span>
+                  <span class="meta-pill">🇮🇳 India</span>
+                </div>
+
+                <div class="profile-stats">
+                  <div class="stat-box">
+                    <span class="stat-number">3</span>
+                    <span class="stat-caption">Featured Web Apps</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-caption">Responsive Focus</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="stat-number">Clean</span>
+                    <span class="stat-caption">Code Standards</span>
+                  </div>
+                </div>
+
+                <div class="profile-actions">
+                  <a href="https://github.com/PRAVIN-KUMAR-295" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                    View GitHub
+                  </a>
+                  <a href="#contact" class="btn btn-primary btn-sm">
+                    Get In Touch
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Story & Core Values -->
+          <div class="about-content reveal-fade" data-delay="250">
+            <div class="about-quote-box">
+              <div class="quote-symbol">“</div>
+              <blockquote class="about-quote">
+                I'm a CSE student passionate about web development and frontend development. I enjoy creating modern, responsive, user-friendly websites and continuously improving my technical skills.
+              </blockquote>
+            </div>
+
+            <p class="about-text">
+              Based in <strong>Udaipur, Rajasthan, India</strong>, I combine modern design principles with disciplined code architecture. I bridge the gap between creative visual aesthetics and robust frontend functionality, ensuring every interface I build feels fluid, intuitive, and remarkably fast.
+            </p>
+
+            <p class="about-text">
+              Whether building an intelligent study platform like <strong>StudyPilot</strong>, an AI event scheduler like <strong>EventEase AI</strong>, or an award-winning style agency experience like <strong>LAZAREV</strong>, my goal is always to deliver clean, scalable, and human-centered software.
+            </p>
+
+            <!-- Authentic Pillars / No Fake Stats -->
+            <div class="values-grid">
+              <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h4 class="value-title">Pixel-Perfect Precision</h4>
+                <p class="value-desc">Meticulous attention to spacing, modern typography, contrast, and visual rhythm.</p>
+              </div>
+
+              <div class="value-card">
+                <div class="value-icon">⚡</div>
+                <h4 class="value-title">Performance-First Code</h4>
+                <p class="value-desc">Lightweight DOM structures, zero bloated libraries, and smooth CSS transitions.</p>
+              </div>
+
+              <div class="value-card">
+                <div class="value-icon">📱</div>
+                <h4 class="value-title">Adaptive Responsiveness</h4>
+                <p class="value-desc">Fluid experiences tested carefully across ultra-wide monitors, tablets, and smartphones.</p>
+              </div>
+
+              <div class="value-card">
+                <div class="value-icon">🚀</div>
+                <h4 class="value-title">Continuous Evolution</h4>
+                <p class="value-desc">Constantly exploring cutting-edge web APIs, React paradigms, and AI-assisted workflows.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 3. TECHNICAL SKILLS SECTION ==================== -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">TECHNICAL ARSENAL</span>
+          <h2 class="section-title">Core <span class="gradient-text">Technologies</span> &amp; Capabilities</h2>
+          <p class="section-description">
+            Modern tools and languages I leverage to build rock-solid web applications.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          
+          <!-- Skill Card 1: HTML5 -->
+          <div class="spotlight-card skill-card reveal-fade" data-delay="100">
+            <div class="skill-top">
+              <div class="skill-icon-wrap html-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3l1.5 15L12 21l6.5-3L20 3H4z"/><path d="M8 8h8M8 12h7M10 16l2 1 2-1"/></svg>
+              </div>
+              <span class="skill-level">Core Foundation</span>
+            </div>
+            <h3 class="skill-name">HTML5</h3>
+            <p class="skill-desc">Semantic markup, SEO optimization, document structure, accessibility (a11y), and web standards compliance.</p>
+            <div class="skill-tags">
+              <span class="tag">Semantic Tags</span>
+              <span class="tag">SEO Best Practices</span>
+              <span class="tag">WCAG Standards</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 2: CSS3 -->
+          <div class="spotlight-card skill-card reveal-fade" data-delay="150">
+            <div class="skill-top">
+              <div class="skill-icon-wrap css-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3l1.5 15L12 21l6.5-3L20 3H4z"/><path d="M8 8h8M8 12h5M10 16l2 1 2-1"/></svg>
+              </div>
+              <span class="skill-level">Styling Master</span>
+            </div>
+            <h3 class="skill-name">CSS3</h3>
+            <p class="skill-desc">Complex Flexbox &amp; Grid layouts, custom CSS properties, micro-animations, glassmorphism, and responsive media queries.</p>
+            <div class="skill-tags">
+              <span class="tag">Flexbox &amp; Grid</span>
+              <span class="tag">Glassmorphism</span>
+              <span class="tag">Keyframes</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 3: JavaScript -->
+          <div class="spotlight-card skill-card reveal-fade" data-delay="200">
+            <div class="skill-top">
+              <div class="skill-icon-wrap js-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M16 8v5a3 3 0 0 1-3 3h-1"/><path d="M9 16c1 0 2-.5 2-2V8"/></svg>
+              </div>
+              <span class="skill-level">Modern ES6+</span>
+            </div>
+            <h3 class="skill-name">JavaScript</h3>
+            <p class="skill-desc">Vanilla JS mastery: DOM manipulation, asynchronous programming (Promises &amp; async/await), Fetch API, and event architectures.</p>
+            <div class="skill-tags">
+              <span class="tag">ES6+ Syntax</span>
+              <span class="tag">DOM API</span>
+              <span class="tag">Async / Fetch</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 4: React -->
+          <div class="spotlight-card skill-card reveal-fade" data-delay="250">
+            <div class="skill-top">
+              <div class="skill-icon-wrap react-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1.5"/></svg>
+              </div>
+              <span class="skill-level">Frontend Framework</span>
+            </div>
+            <h3 class="skill-name">React</h3>
+            <p class="skill-desc">Functional components, custom hooks, reactive state management, lifecycle handling, and single page application (SPA) architectures.</p>
+            <div class="skill-tags">
+              <span class="tag">Component Design</span>
+              <span class="tag">Hooks &amp; State</span>
+              <span class="tag">SPA Architecture</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 5: Tailwind CSS -->
+          <div class="spotlight-card skill-card reveal-fade" data-delay="300">
+            <div class="skill-top">
+              <div class="skill-icon-wrap tailwind-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12c.5-2.5 2-4 4.5-4 3 0 3.5 2 5 2.5 1.5.5 3 0 4.5-1.5M4 17c.5-2.5 2-4 4.5-4 3 0 3.5 2 5 2.5 1.5.5 3 0 4.5-1.5"/></svg>
+              </div>
+              <span class="skill-level">Rapid UI System</span>
+            </div>
+            <h3 class="skill-name">Tailwind CSS</h3>
+            <p class="skill-desc">Utility-first workflow, custom design system tokenization, dark mode orchestration, and highly maintainable UI components.</p>
+            <div class="skill-tags">
+              <span class="tag">Utility Classes</span>
+              <span class="tag">Dark Theme</span>
+              <span class="tag">Design Tokens</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 6: Python -->
+          <div class="spotlight-card skill-card reveal-fade" data-delay="350">
+            <div class="skill-top">
+              <div class="skill-icon-wrap python-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c4 0 5 1 5 4v2H9V6c0-3 1-4 3-4z"/><path d="M12 22c-4 0-5-1-5-4v-2h8v2c0 3-1 4-3 4z"/><circle cx="10" cy="5" r="1"/><circle cx="14" cy="19" r="1"/><path d="M7 8h10c2 0 3 1 3 3v2c0 2-1 3-3 3H7c-2 0-3-1-3-3v-2c0-2 1-3 3-3z"/></svg>
+              </div>
+              <span class="skill-level">Programming &amp; Logic</span>
+            </div>
+            <h3 class="skill-name">Python</h3>
+            <p class="skill-desc">Core algorithmic problem-solving, backend integration scripting, data manipulation, and CSE computing fundamentals.</p>
+            <div class="skill-tags">
+              <span class="tag">Data Structures</span>
+              <span class="tag">Scripting</span>
+              <span class="tag">Algorithms</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. FEATURED PROJECTS SECTION ==================== -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">ENGINEERED CREATIONS</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+          <p class="section-description">
+            Live web applications built with performance, usability, and modern dark aesthetics in mind.
+          </p>
+        </div>
+
+        <div class="projects-list">
+          
+          <!-- PROJECT 1: StudyPilot -->
+          <article class="spotlight-card project-card reveal-fade" data-delay="100">
+            <div class="project-media">
+              <img src="assets/studypilot.svg" alt="StudyPilot SaaS Workspace Interface Mockup" class="project-img" loading="lazy" width="800" height="500">
+              <div class="media-overlay">
+                <a href="https://studypilot-frontend-u2iw.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  Launch Live Demo ↗
+                </a>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-header-meta">
+                <span class="project-category">Full-Featured Web Application</span>
+                <span class="live-pill"><span class="ping-dot"></span> Live on Render</span>
+              </div>
+
+              <h3 class="project-title">StudyPilot</h3>
+              
+              <p class="project-description">
+                A focused, intelligent study companion and task tracking platform engineered to help students monitor study streaks, plan academic milestones, and boost daily learning efficiency through a distraction-free dark interface.
+              </p>
+
+              <div class="project-features">
+                <div class="feat-item">✓ Daily focus target &amp; progress analytics</div>
+                <div class="feat-item">✓ Structured study plan organizers</div>
+                <div class="feat-item">✓ Responsive dark dashboard with intuitive UI</div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="stack-badge">React</span>
+                <span class="stack-badge">Tailwind CSS</span>
+                <span class="stack-badge">JavaScript</span>
+                <span class="stack-badge">Responsive UI</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://studypilot-frontend-u2iw.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="https://github.com/PRAVIN-KUMAR-295/StudyPilot" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: EventEase AI -->
+          <article class="spotlight-card project-card reverse reveal-fade" data-delay="150">
+            <div class="project-media">
+              <img src="assets/eventease.svg" alt="EventEase AI Event Management Platform Interface Mockup" class="project-img" loading="lazy" width="800" height="500">
+              <div class="media-overlay">
+                <a href="https://resilient-mermaid-13cf3c.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                  Launch Live Demo ↗
+                </a>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-header-meta">
+                <span class="project-category">AI-Powered Web Platform</span>
+                <span class="live-pill"><span class="ping-dot"></span> Live on Netlify</span>
+              </div>
+
+              <h3 class="project-title">EventEase AI</h3>
+              
+              <p class="project-description">
+                A sleek, modern event management platform with intelligent AI coordination tools. Designed to simplify organizing conferences, hackathons, and community meetups through automated scheduling and dynamic RSVP management.
+              </p>
+
+              <div class="project-features">
+                <div class="feat-item">✓ AI-powered scheduling copilot</div>
+                <div class="feat-item">✓ Interactive event discovery &amp; filter grid</div>
+                <div class="feat-item">✓ Fast, high-conversion responsive landing pages</div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="stack-badge">JavaScript</span>
+                <span class="stack-badge">HTML5/CSS3</span>
+                <span class="stack-badge">Modern UI/UX</span>
+                <span class="stack-badge">Netlify Deploy</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://resilient-mermaid-13cf3c.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <span>Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="https://github.com/PRAVIN-KUMAR-295/EventEase-AI" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: LAZAREV — Creative Agency Website -->
+          <article class="spotlight-card project-card project-card-lazarev reveal-fade" data-delay="200">
+            <div class="project-media">
+              <img src="assets/lazarev.svg" alt="LAZAREV Creative Agency Website Mockup" class="project-img" loading="lazy" width="800" height="500">
+              <div class="media-overlay">
+                <a href="https://pravin-kumar-295.github.io/LAZAREV-project/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-neon-green">
+                  Launch Live Demo ↗
+                </a>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-header-meta">
+                <span class="project-category">Frontend Development</span>
+                <span class="live-pill" style="background: rgba(0, 255, 136, 0.12); border-color: rgba(0, 255, 136, 0.35); color: #00ff88;">
+                  <span class="ping-dot" style="background: #00ff88;"></span> Live on GitHub Pages
+                </span>
+              </div>
+
+              <h3 class="project-title">LAZAREV <span style="font-size: 1.1rem; color: #00ff88; font-weight: 500;">— Creative Agency</span></h3>
+              
+              <p class="project-description">
+                A modern creative agency website inspired by Lazarev.agency, featuring modern layouts, interactive visual elements and smooth animations.
+              </p>
+
+              <div class="project-features">
+                <div class="feat-item"><span style="color: #00ff88;">✓</span> Premium dark + neon green agency styling</div>
+                <div class="feat-item"><span style="color: #00ff88;">✓</span> Interactive case study showcases &amp; visual media</div>
+                <div class="feat-item"><span style="color: #00ff88;">✓</span> Fluid responsive layouts across all viewports</div>
+              </div>
+
+              <div class="project-tech-stack">
+                <span class="stack-badge">HTML5</span>
+                <span class="stack-badge">CSS3</span>
+                <span class="stack-badge">JavaScript</span>
+                <span class="stack-badge">Creative Agency UI</span>
+              </div>
+
+              <div class="project-links">
+                <a href="https://pravin-kumar-295.github.io/LAZAREV-project/" target="_blank" rel="noopener noreferrer" class="btn btn-neon-green btn-sm">
+                  <span>Live Demo</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="https://github.com/PRAVIN-KUMAR-295/LAZAREV-project" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>Source Code</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 5. SERVICES SECTION ==================== -->
+    <section id="services" class="section services-section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">WHAT I DELIVER</span>
+          <h2 class="section-title">Professional <span class="gradient-text">Freelance Services</span></h2>
+          <p class="section-description">
+            Tailored frontend solutions built to convert visitors, showcase your brand, and operate seamlessly.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          
+          <!-- Service 1: Website Development -->
+          <div class="spotlight-card service-card reveal-fade" data-delay="100">
+            <div class="service-number">01</div>
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="service-title">Website Development</h3>
+            <p class="service-description">
+              End-to-end frontend development using clean HTML5, modern CSS3, and JavaScript or React. I create fast, accessible, maintainable web experiences designed for long-term scalability.
+            </p>
+            <ul class="service-checklist">
+              <li>Clean, semantic, and modular code architecture</li>
+              <li>Cross-browser compatibility (Chrome, Firefox, Safari, Edge)</li>
+              <li>Fast initial load times &amp; performance tuning</li>
+            </ul>
+            <a href="#contact" class="service-action-link">Request Quote <span>→</span></a>
+          </div>
+
+          <!-- Service 2: Landing Page Design -->
+          <div class="spotlight-card service-card reveal-fade" data-delay="150">
+            <div class="service-number">02</div>
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3 class="service-title">Landing Page Design</h3>
+            <p class="service-description">
+              High-impact, futuristic SaaS and product landing pages crafted to captivate audiences, present compelling value propositions, and maximize conversion rates.
+            </p>
+            <ul class="service-checklist">
+              <li>Modern dark UI with purple/blue atmospheric lighting</li>
+              <li>Compelling call-to-action (CTA) hierarchy</li>
+              <li>Micro-animations &amp; smooth interactive visual flows</li>
+            </ul>
+            <a href="#contact" class="service-action-link">Request Quote <span>→</span></a>
+          </div>
+
+          <!-- Service 3: Responsive Website Development -->
+          <div class="spotlight-card service-card reveal-fade" data-delay="200">
+            <div class="service-number">03</div>
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3 class="service-title">Responsive Website Development</h3>
+            <p class="service-description">
+              Refactoring and building mobile-first responsive interfaces that look impeccable whether viewed on a compact smartphone, an iPad, a laptop, or an ultra-wide display.
+            </p>
+            <ul class="service-checklist">
+              <li>Adaptive touch-friendly navigation &amp; controls</li>
+              <li>Fluid typographic scaling &amp; flexible grids</li>
+              <li>Pixel-perfect alignment on every screen resolution</li>
+            </ul>
+            <a href="#contact" class="service-action-link">Request Quote <span>→</span></a>
+          </div>
+
+          <!-- Service 4: Portfolio Website Development -->
+          <div class="spotlight-card service-card reveal-fade" data-delay="250">
+            <div class="service-number">04</div>
+            <div class="service-icon-box">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3 class="service-title">Portfolio Website Development</h3>
+            <p class="service-description">
+              Custom-tailored personal brand and developer portfolio sites that command authority. Designed to help creators, engineers, and professionals land dream clients and job opportunities.
+            </p>
+            <ul class="service-checklist">
+              <li>Interactive project showcases with live preview buttons</li>
+              <li>SEO-ready structure &amp; social meta sharing cards</li>
+              <li>Direct client contact integration &amp; toast notifications</li>
+            </ul>
+            <a href="#contact" class="service-action-link">Request Quote <span>→</span></a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6. CONTACT SECTION ==================== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-fade">
+          <span class="section-tag">COMMENCE COLLABORATION</span>
+          <h2 class="section-title">Let's Build Something <span class="gradient-text">Extraordinary</span></h2>
+          <p class="section-description">
+            Have a project in mind or looking for a dedicated frontend developer? Reach out and let's turn your vision into reality.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Left Column: Contact Channels & Info -->
+          <div class="contact-info-panel reveal-fade" data-delay="100">
+            <div class="spotlight-card contact-card">
+              <h3 class="contact-card-title">Direct Inquiries</h3>
+              <p class="contact-card-desc">
+                I am actively taking on select freelance web development projects and full-time frontend roles. Every message receives a prompt, direct response.
+              </p>
+
+              <!-- Channel 1: Email -->
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-label">Email Address</span>
+                  <a href="mailto:pravinmalviya295@gmail.com" class="channel-val">pravinmalviya295@gmail.com</a>
+                </div>
+                <button class="copy-mini-btn copy-email-btn" data-email="pravinmalviya295@gmail.com" title="Copy email address" aria-label="Copy Pravin's email address">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+
+              <!-- Channel 2: Location -->
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-label">Location</span>
+                  <span class="channel-val">Udaipur, Rajasthan, India (IST / UTC+5:30)</span>
+                </div>
+              </div>
+
+              <!-- Channel 3: Social & Repos -->
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                </div>
+                <div class="channel-text">
+                  <span class="channel-label">Profiles</span>
+                  <div class="social-pills">
+                    <a href="https://github.com/PRAVIN-KUMAR-295" target="_blank" rel="noopener noreferrer" class="social-pill">
+                      <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pravin-kumar-b45b28383/" target="_blank" rel="noopener noreferrer" class="social-pill">
+                      <span>LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="response-pledge">
+                <span class="pledge-dot"></span>
+                <span>Typically responds within 24 hours</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact Form -->
+          <div class="contact-form-panel reveal-fade" data-delay="200">
+            <div class="spotlight-card form-card">
+              <form id="contact-form" class="interactive-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contact-name">Your Name <span class="required">*</span></label>
+                    <input type="text" id="contact-name" name="name" placeholder="e.g. Alex Morgan" required autocomplete="name">
+                    <span class="field-error" id="name-error"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contact-email">Your Email <span class="required">*</span></label>
+                    <input type="email" id="contact-email" name="email" placeholder="alex@company.com" required autocomplete="email">
+                    <span class="field-error" id="email-error"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-service">Service Interested In</label>
+                  <select id="contact-service" name="service">
+                    <option value="Website Development">Website Development</option>
+                    <option value="Landing Page Design">Landing Page Design</option>
+                    <option value="Responsive Website Development">Responsive Website Development</option>
+                    <option value="Portfolio Website Development">Portfolio Website Development</option>
+                    <option value="General Inquiry / Freelance">Other / General Collaboration</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message">Project Details &amp; Timeline <span class="required">*</span></label>
+                  <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project vision, target timeline, or any specific requirements..." required></textarea>
+                  <span class="field-error" id="message-error"></span>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn btn-primary btn-block btn-shine">
+                  <span>Send Message via Email</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+
+                <p class="form-note">
+                  🔒 Submitting launches your default email client pre-filled with this message directly addressed to <strong>pravinmalviya295@gmail.com</strong>.
+                </p>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-brand">
+            <span class="brand-monogram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4H14C17.3137 4 20 6.68629 20 10C20 13.3137 17.3137 16 14 16H8V20H4V4Z" fill="url(#footerGrad)"/><defs><linearGradient id="footerGrad" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#a855f7"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs></svg>
+            </span>
+            <span class="brand-name">PRAVIN<span class="brand-dot">.</span>DEV</span>
+          </a>
+          <p class="footer-tagline">
+            Engineering futuristic, fast, responsive web interfaces with passion &amp; modern code craftsmanship.
+          </p>
+        </div>
+
+        <div class="footer-nav">
+          <span class="footer-heading">Navigation</span>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-projects">
+          <span class="footer-heading">Featured Works</span>
+          <ul>
+            <li><a href="https://studypilot-frontend-u2iw.onrender.com" target="_blank" rel="noopener noreferrer">StudyPilot ↗</a></li>
+            <li><a href="https://resilient-mermaid-13cf3c.netlify.app" target="_blank" rel="noopener noreferrer">EventEase AI ↗</a></li>
+            <li><a href="https://pravin-kumar-295.github.io/LAZAREV-project/" target="_blank" rel="noopener noreferrer">LAZAREV Agency ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-connect">
+          <span class="footer-heading">Connect</span>
+          <div class="footer-social-icons">
+            <a href="https://github.com/PRAVIN-KUMAR-295" target="_blank" rel="noopener noreferrer" aria-label="Pravin Kumar GitHub" class="footer-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/pravin-kumar-b45b28383/" target="_blank" rel="noopener noreferrer" aria-label="Pravin Kumar LinkedIn" class="footer-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="mailto:pravinmalviya295@gmail.com" aria-label="Pravin Kumar Email" class="footer-icon-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+          </div>
+          <span class="footer-location">📍 Udaipur, Rajasthan, India</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="current-year">2026</span> Pravin Kumar. All rights reserved. Crafted with clean code &amp; modern web standards.
+        </p>
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top of page">
+          <span>Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Bundle -->
+  <script src="script.js"></script>
+</body>
+</html>
